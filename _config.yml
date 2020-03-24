@@ -1,1 +1,19 @@
-theme: jekyll-theme-slate
+# Site settings
+title: "Adventurer's Log"
+email: amlalejini@gmail.com
+
+# include:
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-sitemap
