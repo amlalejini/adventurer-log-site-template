@@ -1,0 +1,10 @@
+---
+---
+
+@import "bootstrap/bootstrap.scss";
+
+blockquote {
+  border-left: 4px solid gray("300");
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
