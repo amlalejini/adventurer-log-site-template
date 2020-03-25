@@ -4,10 +4,24 @@
 <!doctype html>
 <html lang="en">
   {% include head.html %}
+
   <body>
-    {% include header.html %}
-    {{ content }}
-    {% include footer.html %}
+    <div class="wrapper">
+
+      {% include header.html %}
+
+      <div id="content">
+
+        {% include nav_toggle.html %}
+
+        {{ content }}
+
+      </div>
+
+      {% include footer.html %}
+    </div>
+
     {% include scripts.html %}
   </body>
+
 </html>

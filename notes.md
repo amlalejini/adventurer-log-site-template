@@ -15,3 +15,8 @@ Content:
     - Character titles
     - Characters
     - Places
+
+
+Acknowledgements
+
+- Sidebar adapated from: https://bootstrapious.com/p/bootstrap-sidebar
