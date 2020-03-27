@@ -2,7 +2,13 @@
 title: "Adventurer's Log"
 email: amlalejini@gmail.com
 
-# include:
+include:
+  - _pages
+
+collections:
+  characters:
+    output: true
+    permalink: /:collection/:title
 
 sass:
   sass_dir: _sass

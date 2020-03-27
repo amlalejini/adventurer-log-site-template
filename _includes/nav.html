@@ -1,53 +1,50 @@
-
-<nav id="sidebar">
+<nav id="sidebar" class="text-white  bg-dark">
 
   <div class="sidebar-header">
-    <h3>Sidebar Title</h3>
+    <h3>{{ site.title }}</h3>
   </div>
 
   <!-- todo - use actual menu items, fill out dropdowns with characters, etc! -->
 
   <ul class="list-unstyled components">
-    <p>Dummy Heading</p>
-    <li class="">
-      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-        Home
+    <p>Navigation</p>
+
+    <li>
+      <a href="#" class="text-light">
+        <i class="far fa-book-spells"></i>
+        Adventure Logs
       </a>
-      <ul class="collapse list-unstyled" id="homeSubmenu">
+    </li>
+
+    <li>
+      <a href="#charSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-light">
+        <i class="far fa-portrait"></i>
+        Player Characters
+      </a>
+      <!-- todo - pretty this up (with icons?) -->
+      <ul class="collapse list-unstyled" id="charSubmenu">
+        {% for char in site.characters %}
         <li>
-          <a href="#">Home 1</a>
+          <a href="characters/{{ char.title }}" class="text-light">{{ char.character_info.name }}</a>
         </li>
-        <li>
-          <a href="#">Home 2</a>
-        </li>
-        <li>
-          <a href="#">Home 3</a>
-        </li>
+        {% endfor %}
       </ul>
     </li>
+
     <li>
-      <a href="#">About</a>
+      <a href="#" class="text-light">
+        <i class="far fa-treasure-chest"></i>
+        Session Notes
+      </a>
     </li>
+
     <li>
-      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-      <ul class="collapse list-unstyled" id="pageSubmenu">
-        <li>
-          <a href="#">Page 1</a>
-        </li>
-        <li>
-          <a href="#">Page 2</a>
-        </li>
-        <li>
-          <a href="#">Page 3</a>
-        </li>
-      </ul>
+      <a href="#" class="text-light">
+        <i class="fas fa-dungeon"></i>
+        World Info
+      </a>
     </li>
-    <li>
-      <a href="#">Portfolio</a>
-    </li>
-    <li>
-      <a href="#">Contact</a>
-    </li>
+
   </ul>
 
 </nav>
