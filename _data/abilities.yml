@@ -1,0 +1,12 @@
+strength:
+  abbreviation: str
+dexterity:
+  abbreviation: dex
+constitution:
+  abbreviation: const
+intelligence:
+  abbreviation: int
+wisdom:
+  abbreviation: wis
+charisma:
+  abbreviation: cha

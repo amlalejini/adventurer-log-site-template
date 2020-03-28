@@ -1,0 +1,53 @@
+- skill: acrobatics
+  ability: dexterity
+
+- skill: animal handling
+  ability: wisdom
+
+- skill: arcana
+  ability: intelligence
+
+- skill: athletics
+  ability: strength
+
+- skill: deception
+  ability: charisma
+
+- skill: history
+  ability: intelligence
+
+- skill: insight
+  ability: wisdom
+
+- skill: intimidation
+  ability: charisma
+
+- skill: investigation
+  ability: intelligence
+
+- skill: medicine
+  ability: wisdom
+
+- skill: nature
+  ability: intelligence
+
+- skill: perception
+  ability: wisdom
+
+- skill: performance
+  ability: charisma
+
+- skill: persuasion
+  ability: charisma
+
+- skill: religion
+  ability: intelligence
+
+- skill: sleight of hand
+  ability: dexterity
+
+- skill: stealth
+  ability: dexterity
+
+- skill: survival
+  ability: wisdom
