@@ -3,7 +3,8 @@ title: vendor
 layout: player_character
 character_info:
   name: Supply Model 8 - Unit 256, 'Vendor'
-  class: Artificer Artillerist
+  class: artificer
+  class_specialty: artillerist
   level: 6
   race: Warforged
   alignment: Neutral good
@@ -30,7 +31,16 @@ character_info:
   proficient_saving_throws:
     - constitution
     - intelligence
-
+  class_features:
+    - magical tinkering
+    - spellcasting
+    - ritual casting
+    - infuse item
+    - the right tool for the job
+    - eldritch cannon
+    - arcane firearm
 ---
 
-This is vendor.
+#### Convenient reminders
+
+#### Another subheading
