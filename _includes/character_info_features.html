@@ -1,0 +1,34 @@
+<div class="row pb-3">
+  <div class="col">
+    <!-- Card -->
+    <div class="card">
+      <!-- Card heading -->
+      <div class="card-header" id="features-card-header">
+        <button class="btn btn-lg btn-block" type="button" data-toggle="collapse" data-target="#features-card" aria-expanded="true" aria-controls="features-card">
+          <h3 class="mb-0 text-left">
+            Features
+          </h3>
+        </button>
+      </div>
+      <!-- Card body -->
+      <div id="features-card" class="collapse show" area-labelledby="features-card-header">
+        <div class="card-body">
+
+          <script>
+            fetch('https://www.dnd5eapi.co/api/features/bard-college')
+              .then(response => {
+                return response.json();
+              })
+              .then(data => {
+                console.log(data);
+              })
+              .then(err => {
+                console.log(err);
+              });
+          </script>
+
+        </div> <!-- End card body -->
+      </div> <!-- End collapse-able -->
+    </div> <!-- End card -->
+  </div> <!-- End column -->
+</div> <!-- End row -->

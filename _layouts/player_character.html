@@ -32,241 +32,58 @@ layout: default
   </div>
 </div>
 
-<div class="row pb-3">
-  <div class="col">
-    <!-- Skills card -->
-    <div class="card">
-      <!-- Card heading -->
-      <div class="card-header" id="abilities-table-heading">
-        <button class="btn btn-lg btn-block" type="button" data-toggle="collapse" data-target="#abilities-table" aria-expanded="true" aria-controls="abilities-table">
-          <h3 class="mb-0 text-left">
-            Character Stats
-          </h3>
-        </button>
-      </div>
-      <!-- Card body -->
-      <div id="abilities-table" class="collapse show" area-labelledby="abilities-table-heading">
-        <div class="card-body">
-          <div class="row pb-2">
-            <div class="col">
-              <ul class="list-group list-group-horizontal">
-                <li class="list-group-item flex-fill">
-                  <i class="far fa-shield"></i>
-                  Armor class: {{ page.character_info.armor_class }}
-                </li>
-                <li class="list-group-item flex-fill">
-                  <i class="fas fa-heart"></i>
-                  Max health: {{ page.character_info.max_health }}
-                </li>
-                <li class="list-group-item flex-fill">
-                  <i class="fal fa-rabbit-fast"></i>
-                  Speed: {{ page.character_info.speed }}
-                </li>
-                <li class="list-group-item flex-fill">
-                  <i class="fal fa-ruler-vertical"></i>
-                  Size: {{ page.character_info.size }}
-                </li>
-              </ul>
-            </div>
-          </div>
+  <!-- <div class="row">
 
-          <div class="row">
-            <div class="col">
-              <table class="table">
-                <thead class="bg-dark text-light">
-                  <tr>
-                    <th scope="col">Ability</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Modifier</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for ability in page.character_info.abilities %}
-                    <tr>
-                      <td>{{ ability[0] | capitalize }}</td>
-                      <td>{{ ability[1] }}</td>
-                      <td>{{ ability[1] | minus: 10 | divided_by: 2 | floor }}</td>
-                    </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </div>
+  </div>
+</div> -->
 
-          <div class="row">
+<div class="row">
+  <div class="col-11">
+    <div class="" id="stats">
+      {% include character_info_stats.html %}
+    </div>
 
-            <div class="col">
-              <ul class="list-group">
-                <li class="list-group-item bg-dark text-light">
-                  <h5>Skills</h5>
-                </li>
-                {% for skill in site.data.skills %}
-                  <!-- compute modifier -->
-                  {% assign base_mod = page.character_info.abilities[skill.ability] | minus: 10 | divided_by: 2 | floor %}
-                  {% if page.character_info.proficient_skills contains skill.skill %}
-                    {% assign modifier = base_mod | plus: page.character_info.proficiency_bonus %}
-                  {% else %}
-                    {% assign modifier = base_mod %}
-                  {% endif %}
-                  <!-- compute list item background -->
-                  {% if page.character_info.proficient_skills contains skill.skill %}
-                    {% assign item_class = 'list-group-item-success' %}
-                  {% elsif page.character_info.disadvantaged_skills contains skill.skill %}
-                    {% assign item_class = 'list-group-item-danger' %}
-                  {% else %}
-                    {% assign item_class = 'list-group-item-secondary' %}
-                  {% endif %}
+    <div id="features">
+      {% include character_info_features.html %}
+    </div>
 
-                  <li class="list-group-item {{ item_class }} d-flex justify-content-between align-items-center" >
-                    {{ skill.skill | capitalize }} ({{ site.data.abilities[skill.ability].abbreviation }})
-                    <span class="badge badge-primary badge-pill">
-                      {% if modifier < 0 %}
-                        {{ modifier }}
-                      {% else %}
-                        +{{ modifier }}
-                      {% endif %}
-                    </span>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
+    <div id="persona">
+      {% include character_info_persona.html %}
+    </div>
 
-            <div class="col">
-              <ul class="list-group">
-                <li class="list-group-item bg-dark text-light">
-                  <h5>Saving Throws</h5>
-                </li>
+    <div id="inventory">
+      {% include character_info_inventory.html %}
+    </div>
 
-                {% for ability in site.data.abilities %}
-                  {% assign ability_name = ability[0] %}
-                  {% assign base_mod = page.character_info.abilities[ability_name] | minus: 10 | divided_by: 2 | floor %}
-                  {% if page.character_info.proficient_saving_throws contains ability[0] %}
-                    {% assign modifier = base_mod | plus: page.character_info.proficiency_bonus %}
-                  {% else %}
-                    {% assign modifier = base_mod %}
-                  {% endif %}
-                  <!-- compute list item background -->
-                  {% if page.character_info.proficient_saving_throws contains ability_name %}
-                    {% assign item_class = 'list-group-item-success' %}
-                  {% else %}
-                    {% assign item_class = 'list-group-item-secondary' %}
-                  {% endif %}
+    <div id="journal">
+      {% include character_info_journal.html %}
+    </div>
+  </div>
 
-                  <li class="list-group-item {{ item_class }} d-flex justify-content-between align-items-center" >
-                    {{ ability_name | capitalize }}
-                    <span class="badge badge-primary badge-pill">
-                      {% if modifier < 0 %}
-                        {{ modifier }}
-                      {% else %}
-                        +{{ modifier }}
-                      {% endif %}
-                    </span>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
+  <div class="col-1 float-right ">
+    <ul class="list-group sticky-top">
+      <li class="list-group-item border-0">
+        <span>
+          <a href="#stats"><i class="fal fa-analytics"></i></a>
+        </span>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#features"><i class="fal fa-sparkles"></i></a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#persona"><i class="fad fa-user-cowboy"></i></a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#inventory"><i class="fal fa-backpack"></i> </a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#journal"><i class="fal fa-book"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-        </div> <!-- End card body -->
-      </div> <!-- End collapse-able -->
-    </div> <!-- End abilities card -->
-  </div> <!-- End column -->
-
-</div> <!-- End row -->
-
-
-<div class="row pb-3">
-  <div class="col">
-    <!-- Card -->
-    <div class="card">
-      <!-- Card heading -->
-      <div class="card-header" id="features-card-header">
-        <button class="btn btn-lg btn-block" type="button" data-toggle="collapse" data-target="#features-card" aria-expanded="true" aria-controls="features-card">
-          <h3 class="mb-0 text-left">
-            Features
-          </h3>
-        </button>
-      </div>
-      <!-- Card body -->
-      <div id="features-card" class="collapse show" area-labelledby="features-card-header">
-        <div class="card-body">
-
-        </div> <!-- End card body -->
-      </div> <!-- End collapse-able -->
-    </div> <!-- End card -->
-  </div> <!-- End column -->
-</div> <!-- End row -->
-
-<div class="row pb-3">
-  <div class="col">
-    <!-- Card -->
-    <div class="card">
-      <!-- Card heading -->
-      <div class="card-header" id="inventory-card-heading">
-        <button class="btn btn-lg btn-block" type="button" data-toggle="collapse" data-target="#inventory-card" aria-expanded="true" aria-controls="inventory-card">
-          <h3 class="mb-0 text-left">
-            Inventory
-          </h3>
-        </button>
-      </div>
-      <!-- Card body -->
-      <div id="inventory-card" class="collapse show" area-labelledby="inventory-card-heading">
-        <div class="card-body">
-
-        </div> <!-- End card body -->
-      </div> <!-- End collapse-able -->
-    </div> <!-- End card -->
-  </div> <!-- End column -->
-</div> <!-- End row -->
-
-<div class="row pb-3">
-  <div class="col">
-    <!-- Card -->
-    <div class="card">
-      <!-- Card heading -->
-      <div class="card-header" id="persona-card-heading">
-        <button class="btn btn-lg btn-block" type="button" data-toggle="collapse" data-target="#persona-card" aria-expanded="true" aria-controls="persona-card">
-          <h3 class="mb-0 text-left">
-            Persona
-          </h3>
-        </button>
-      </div>
-      <!-- Card body -->
-      <div id="persona-card" class="collapse show" area-labelledby="persona-card-heading">
-        <div class="card-body">
-
-        </div> <!-- End card body -->
-      </div> <!-- End collapse-able -->
-    </div> <!-- End card -->
-  </div> <!-- End column -->
-</div> <!-- End row -->
-
-<div class="row pb-3">
-  <div class="col">
-    <!-- Card -->
-    <div class="card">
-      <!-- Card heading -->
-      <div class="card-header" id="journal-card-heading">
-        <button class="btn btn-lg btn-block" type="button" data-toggle="collapse" data-target="#journal-card" aria-expanded="true" aria-controls="journal-card">
-          <h3 class="mb-0 text-left">
-            Journal
-          </h3>
-        </button>
-      </div>
-      <!-- Card body -->
-      <div id="journal-card" class="collapse show" area-labelledby="journal-card-heading">
-        <div class="card-body">
-
-        </div> <!-- End card body -->
-      </div> <!-- End collapse-able -->
-    </div> <!-- End card -->
-  </div> <!-- End column -->
-</div> <!-- End row -->
 
 <br/>
-
-
-{{ content }}
-
 
 {% endif %}

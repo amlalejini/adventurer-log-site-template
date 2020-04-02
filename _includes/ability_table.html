@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="bg-dark text-light">
+    <tr>
+      <th scope="col">Ability</th>
+      <th scope="col">Score</th>
+      <th scope="col">Modifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ability in page.character_info.abilities %}
+      <tr>
+        <td>{{ ability[0] | capitalize }}</td>
+        <td>{{ ability[1] }}</td>
+        <td>{{ ability[1] | minus: 10 | divided_by: 2 | floor }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
