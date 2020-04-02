@@ -15,7 +15,7 @@
         <div class="card-body">
           <div class="row pb-2">
             <div class="col">
-              <ul class="list-group list-group-horizontal">
+              <ul class="list-group list-group-horizontal-lg">
                 <li class="list-group-item flex-fill">
                   <i class="far fa-shield"></i>
                   Armor class: {{ page.character_info.armor_class }}
@@ -32,6 +32,20 @@
                   <i class="fal fa-ruler-vertical"></i>
                   Size: {{ page.character_info.size }}
                 </li>
+                {% if page.character_info.spellcasting %}
+                  {% assign casting_ability = page.character_info.casting_ability %}
+                  {% assign ability_mod = page.character_info.abilities[casting_ability] | minus: 10 | divided_by: 2 | floor %}
+                  <li class="list-group-item flex-fill">
+                    {% assign spell_mod = ability_mod | plus: page.character_info.proficiency_bonus | plus: page.character_info.spell_attack_bonus %}
+                    <i class="fad fa-wand-magic"></i>
+                    Spell atk modifier: {{ spell_mod }}
+                  </li>
+                  <li class="list-group-item flex-fill">
+                    {% assign spell_save_dc = ability_mod | plus: page.character_info.proficiency_bonus | plus: 8 %}
+                    <i class="fad fa-hand-holding-magic"></i>
+                    Spell save DC: {{ spell_save_dc }}
+                  </li>
+                {% endif %}
               </ul>
             </div>
           </div>

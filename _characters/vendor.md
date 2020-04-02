@@ -13,6 +13,9 @@ character_info:
   max_health: 51
   size: medium
   speed: 30 feet
+  spellcasting: true
+  casting_ability: intelligence
+  spell_attack_bonus: 1
   abilities:
     strength: 8
     dexterity: 14
