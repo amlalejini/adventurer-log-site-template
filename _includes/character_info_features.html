@@ -40,10 +40,55 @@
           {% endfor %}
 
           <!-- List out racial features -->
+          {% assign racial_features = site.data.features.racial[page.character_info.race] %}
+          {% for feature in page.character_info.racial_features %}
+            {% if racial_features contains feature %}
+              {% assign feature_info = racial_features[feature] %}
+              {% assign feature_id = feature | replace: ' ', '-' %}
+                <div class ="card mb-2">
+                  <div class="card-body" id="{{ feature_id }}">
+                    <h5 class="card-title">{{ feature | capitalize }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Racial Feature</h6>
+                    {{ feature_info['description'] | markdownify }}
+                  </div>
+                </div>
+              {% else %}
+                <div class ="card mb-2">
+                  <div class="card-body" id="none">
+                    <h5 class="card-title">{{ feature | capitalize }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Racial Feature</h6>
+                    <p>Feature not found.</p>
+                  </div>
+                </div>
+            {% endif %}
+          {% endfor %}
 
           <!-- List out background features -->
+          {% assign background_features = site.data.features.background[page.character_info.background] %}
+          {% for feature in page.character_info.background_features %}
+            {% if background_features contains feature %}
+              {% assign feature_info = background_features[feature] %}
+              {% assign feature_id = feature | replace: ' ', '-' %}
+                <div class ="card mb-2">
+                  <div class="card-body" id="{{ feature_id }}">
+                    <h5 class="card-title">{{ feature | capitalize }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Background Feature</h6>
+                    {{ feature_info['description'] | markdownify }}
+                  </div>
+                </div>
+              {% else %}
+                <div class ="card mb-2">
+                  <div class="card-body" id="none">
+                    <h5 class="card-title">{{ feature | capitalize }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Background Feature</h6>
+                    <p>Feature not found.</p>
+                  </div>
+                </div>
+            {% endif %}
+          {% endfor %}
 
           <!-- List out custom features -->
+          <!-- TODO -->
 
         </div> <!-- End card body -->
       </div> <!-- End collapse-able -->

@@ -5,8 +5,10 @@ character_info:
   name: Supply Model 8 - Unit 256, 'Vendor'
   class: artificer
   class_specialty: artillerist
+  race: warforged
+  background: guild artisan
   level: 6
-  race: Warforged
+  age: unknown
   alignment: Neutral good
   proficiency_bonus: 3
   armor_class: 20
@@ -29,11 +31,23 @@ character_info:
     - investigation
     - perception
     - persuasion
-  disadvantaged_skills:
-    - stealth
   proficient_saving_throws:
     - constitution
     - intelligence
+  disadvantaged_skills:
+    - stealth
+  other_proficiencies:
+    - Thieves' tools
+    - Tinker's tools
+    - Herbalism kit
+    - Woodcarver's tools
+    - Smith's tools
+    - Carpenter's tools
+    - Simple weapons
+    - Firearms
+    - Light armor
+    - Medium armor
+    - Shields
   class_features:
     - magical tinkering
     - spellcasting
@@ -42,6 +56,21 @@ character_info:
     - the right tool for the job
     - eldritch cannon
     - arcane firearm
+  racial_features:
+    - constructed resilience
+    - sentry's rest
+    - integrated protection
+  background_features:
+    - guild business
+    - guild membership
+  inventory:
+    - placeholder
+    - placeholder2
+  persona:
+    languages:
+      - common
+    background: placeholder
+
 ---
 
 #### Convenient reminders

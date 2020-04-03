@@ -63,8 +63,32 @@
             </div>
 
             <div class="col">
-              {% include saving_throws_list.html %}
+              <div class="row pb-2">
+                <div class="col">
+                  {% include saving_throws_list.html %}
+                </div>
+              </div>
+
+              {% if page.character_info.other_proficiencies %}
+              <div class="row">
+                <!-- other_proficiencies -->
+                <div class="col">
+                  <ul class="list-group">
+                    <li class="list-group-item bg-dark text-light">
+                      <h5>Other Proficiencies</h5>
+                    </li>
+                    {% for prof in page.character_info.other_proficiencies %}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ prof | capitalize }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              {% endif %}
+
             </div>
+
           </div>
 
         </div> <!-- End card body -->
