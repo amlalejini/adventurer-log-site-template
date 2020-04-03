@@ -48,6 +48,13 @@ character_info:
     - Light armor
     - Medium armor
     - Shields
+  skill_notes:
+    - Tool expertise (x2 proficiency bonus when using tools)
+    - Advantage vs. being poisoned
+    - Resistance to poison damage
+    - Immune to disease
+    - Magic cannot put to sleep
+    - Stealth disadvantage
   class_features:
     - magical tinkering
     - spellcasting

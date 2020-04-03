@@ -86,10 +86,27 @@
                 </div>
               </div>
               {% endif %}
-
             </div>
 
           </div>
+
+          {% if page.character_info.skill_notes %}
+          <div class="row">
+            <div class="col">
+              <ul class="list-group">
+                <li class="list-group-item bg-dark text-light">
+                  <h5>Misc. Notes</h5>
+                </li>
+                {% for note in page.character_info.skill_notes %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ note | capitalize }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+
 
         </div> <!-- End card body -->
       </div> <!-- End collapse-able -->
