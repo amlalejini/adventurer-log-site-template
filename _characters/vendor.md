@@ -70,14 +70,30 @@ character_info:
   background_features:
     - guild business
     - guild membership
+  money: 15gp
   inventory:
-    - placeholder
-    - placeholder2
-  persona:
-    languages:
-      - common
-    background: placeholder
-
+    weapons:
+      - item: daggers
+        quantity: 2
+      - item: light crossbow
+        description: lighter than a heavy crossbow
+      - item: bolts
+        quantity: 20
+    spellcasting:
+      - item: wand
+    armor:
+      - item: scale mail
+      - item: shield
+    tools:
+      - item: thieves' tools
+      - item: tinker's tools
+      - item: herbalism kit
+      - item: woodcarver's kit
+      - item: smith's tools
+      - item: carpenter's tools
+    other:
+      - item: dungeoneer's pack
+      - item: letter of introduction from guild
 ---
 
 #### Convenient reminders
