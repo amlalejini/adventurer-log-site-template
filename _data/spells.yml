@@ -1,14 +1,23 @@
 firebolt:
   level: 0
-  casting_time:
-  components:
-  duration:
+  casting time: 1 action
+  range/area: 120 ft
+  school: Evocation
+  attack/save: Ranged
+  damage/effect: Fire
+  components: V, S
+  duration: Instantaneous
   description: |
-    todo
+    You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against
+    the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites
+    if it isn't being worn or carried.
+
+    This spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th
+    level (4d10).
 
 mending:
   level: 0
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -16,7 +25,7 @@ mending:
 
 shield:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -24,7 +33,7 @@ shield:
 
 thunderwave:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -32,7 +41,7 @@ thunderwave:
 
 scorching ray:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -40,7 +49,7 @@ scorching ray:
 
 shatter:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -48,7 +57,7 @@ shatter:
 
 cure wounds:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -56,7 +65,7 @@ cure wounds:
 
 alarm:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -64,7 +73,7 @@ alarm:
 
 feather fall:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -72,7 +81,7 @@ feather fall:
 
 aid:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -80,7 +89,7 @@ aid:
 
 alter self:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -88,7 +97,7 @@ alter self:
 
 lesser restoration:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |
@@ -96,7 +105,7 @@ lesser restoration:
 
 web:
   level:
-  casting_time:
+  casting time:
   components:
   duration:
   description: |

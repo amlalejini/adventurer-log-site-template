@@ -40,22 +40,32 @@
           {% assign spells = page.character_info.spells %}
           {% for spell in spells %}
             {% assign spell_info = site.data.spells[spell['spell']] %}
+            {% if spell contains 'level' %}
+              {% assign spell_level = spell['level'] %}
+            {% elsif spell_info contains 'level' %}
+              {% assign spell_level = spell_info['level'] %}
+            {% else %}
+              {% assign spell_level = nil %}
+            {% endif %}
             <div class="card mb-2">
               <div class="card-body">
-                <h5 class="card-title"> {{ spell['spell'] | capitalize }} </h5>
+                <h5 class="card-title">
+                  {{ spell['spell'] | capitalize }}
+                  {% if spell contains 'prepared' and spell['prepared'] == true %}
+                    <span class="badge badge-primary ml-2">Prepared</span>
+                  {% endif %}
+                  {% if spell_level and spell_level == 0 %}
+                    <span class="badge badge-success ml-2">Cantrip</span>
+                  {% endif %}
+                </h5>
                 <!-- spell level -->
-                {% if spell contains 'level' %}
-                  {% assign spell_level = spell['level'] %}
-                {% elsif spell_info contains 'level' %}
-                  {% assign spell_level = spell_info['level'] %}
-                {% else %}
-                  {% assign spell_level = nil %}
-                {% endif %}
                 {% if spell_level %}
                   <h6 class="card-subtitle text-muted"> Spell level {{ spell_level }}</h6>
                 {% endif %}
                 <hr/>
-                <ul class="list-group list-group-horizontal-lg">
+                <!-- Spell stats -->
+                {% assign spell_stat_style = 'border flex-fill' %}
+                <ul class="d-flex flex-wrap">
                   <!-- casting time -->
                   {% if spell contains 'casting time' %}
                     {% assign casting_time = spell['casting time'] %}
@@ -64,60 +74,127 @@
                   {% else %}
                     {% assign casting_time = nil %}
                   {% endif %}
+                  {% if casting_time %}
+                    <!-- <li class="list-group-item">
+                      Casting time: {{ casting_time }}
+                    </li> -->
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">Casting time</p>
+                      <hr/>
+                      <p class="text-center">{{ casting_time }}</p>
+                    </li>
+                  {% endif %}
+
                   <!-- range/area -->
                   {% if spell contains 'range/area' %}
-
+                    {% assign range_area = spell['range/area'] %}
                   {% elsif spell_info contains 'range/area' %}
-
+                    {% assign range_area = spell_info['range/area'] %}
                   {% else %}
-
+                    {% assign range_area = nil %}
                   {% endif %}
+                  {% if range_area %}
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">Range/area</p>
+                      <hr/>
+                      <p class="text-center">{{ range_area }}</p>
+                    </li>
+                  {% endif %}
+
                   <!-- components -->
-                  {% if spell contains '' %}
-
-                  {% elsif spell_info contains '' %}
-
+                  {% if spell contains 'components' %}
+                    {% assign spell_components = spell['components'] %}
+                  {% elsif spell_info contains 'components' %}
+                    {% assign spell_components = spell_info['components'] %}
                   {% else %}
-
+                    {% assign spell_components = nil %}
                   {% endif %}
+                  {% if spell_components %}
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">Components</p>
+                      <hr/>
+                      <p class="text-center">{{ spell_components }}</p>
+                    </li>
+                  {% endif %}
+
                   <!-- duration -->
-                  {% if spell contains '' %}
-
-                  {% elsif spell_info contains '' %}
-
+                  {% if spell contains 'duration' %}
+                    {% assign spell_duration = spell['duration'] %}
+                  {% elsif spell_info contains 'duration' %}
+                    {% assign spell_duration = spell_info['duration'] %}
                   {% else %}
-
+                    {% assign spell_duration = nil %}
                   {% endif %}
+                  {% if spell_duration %}
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">Duration</p>
+                      <hr/>
+                      <p class="text-center">{{ spell_duration }}</p>
+                    </li>
+                  {% endif %}
+
                   <!-- school -->
-                  {% if spell contains '' %}
-
-                  {% elsif spell_info contains '' %}
-
+                  {% if spell contains 'school' %}
+                    {% assign spell_school = spell['school'] %}
+                  {% elsif spell_info contains 'school' %}
+                    {% assign spell_school = spell_info['school'] %}
                   {% else %}
-
+                    {% assign spell_school = nil %}
                   {% endif %}
+                  {% if spell_school %}
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">School</p>
+                      <hr/>
+                      <p class="text-center">{{ spell_school }}</p>
+                    </li>
+                  {% endif %}
+
                   <!-- attack/save -->
-                  {% if spell contains '' %}
-
-                  {% elsif spell_info contains '' %}
-
+                  {% if spell contains 'attack/save' %}
+                    {% assign spell_attack_save = spell['attack/save'] %}
+                  {% elsif spell_info contains 'attack/save' %}
+                    {% assign spell_attack_save = spell_info['attack/save'] %}
                   {% else %}
-
+                    {% assign spell_attack_save = nil %}
                   {% endif %}
+                  {% if spell_attack_save %}
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">Attack/save</p>
+                      <hr/>
+                      <p class="text-center">{{ spell_attack_save }}</p>
+                    </li>
+                  {% endif %}
+
                   <!-- damage/effect -->
-                  {% if spell contains '' %}
-
-                  {% elsif spell_info contains '' %}
-
+                  {% if spell contains 'damage/effect' %}
+                    {% assign spell_damage_effect = spell['damage/effect'] %}
+                  {% elsif spell_info contains 'damage/effect' %}
+                    {% assign spell_damage_effect = spell_info['damage/effect'] %}
                   {% else %}
-
+                    {% assign spell_damage_effect = nil %}
+                  {% endif %}
+                  {% if spell_damage_effect %}
+                    <li class="list-group-item {{ spell_stat_style }}">
+                      <p class="text-center font-weight-bold">Damage/effect</p>
+                      <hr/>
+                      <p class="text-center">{{ spell_damage_effect }}</p>
+                    </li>
                   {% endif %}
                 </ul>
 
                 <hr/>
 
-                {{ spell }}
-                {{ spell_info }}
+                <!-- Spell description -->
+                {% if spell contains 'description' %}
+                  {% assign spell_description = spell['description'] %}
+                {% elsif spell_info contains 'description' %}
+                  {% assign spell_description = spell_info['description'] %}
+                {% else %}
+                  {% assign spell_description = nil %}
+                {% endif %}
+                {% if spell_description %}
+                  {{ spell_description | markdownify }}
+                {% endif %}
 
                 <!-- include any footnotes -->
                 {% if spell contains 'footnote' %}
