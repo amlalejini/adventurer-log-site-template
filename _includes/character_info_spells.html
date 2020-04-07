@@ -15,8 +15,118 @@
 
         <div class="card-body">
 
-          <!-- List out custom features -->
-          <!-- TODO -->
+          <!-- spell slots -->
+          {% if page.character_info.spell_slots %}
+            {% assign slots = page.character_info.spell_slots %}
+            <div class="row mb-2">
+              <div class="col">
+                <ul class="list-group list-group-horizontal-lg">
+                  <li class="list-group-item bg-dark text-light">
+                    <h5>Spell slots</h5>
+                  </li>
+                  {% for slot in slots %}
+                    <li class="list-group-item">
+                      <p class="text-center font-weight-bold">Level {{ slot['level'] }}</p>
+                      <hr/>
+                      <p class="text-center">{{ slot['slots'] }}</p>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          <!-- List out spells -->
+          {% assign spells = page.character_info.spells %}
+          {% for spell in spells %}
+            {% assign spell_info = site.data.spells[spell['spell']] %}
+            <div class="card mb-2">
+              <div class="card-body">
+                <h5 class="card-title"> {{ spell['spell'] | capitalize }} </h5>
+                <!-- spell level -->
+                {% if spell contains 'level' %}
+                  {% assign spell_level = spell['level'] %}
+                {% elsif spell_info contains 'level' %}
+                  {% assign spell_level = spell_info['level'] %}
+                {% else %}
+                  {% assign spell_level = nil %}
+                {% endif %}
+                {% if spell_level %}
+                  <h6 class="card-subtitle text-muted"> Spell level {{ spell_level }}</h6>
+                {% endif %}
+                <hr/>
+                <ul class="list-group list-group-horizontal-lg">
+                  <!-- casting time -->
+                  {% if spell contains 'casting time' %}
+                    {% assign casting_time = spell['casting time'] %}
+                  {% elsif spell_info contains 'casting time' %}
+                    {% assign casting_time = spell_info['casting time'] %}
+                  {% else %}
+                    {% assign casting_time = nil %}
+                  {% endif %}
+                  <!-- range/area -->
+                  {% if spell contains 'range/area' %}
+
+                  {% elsif spell_info contains 'range/area' %}
+
+                  {% else %}
+
+                  {% endif %}
+                  <!-- components -->
+                  {% if spell contains '' %}
+
+                  {% elsif spell_info contains '' %}
+
+                  {% else %}
+
+                  {% endif %}
+                  <!-- duration -->
+                  {% if spell contains '' %}
+
+                  {% elsif spell_info contains '' %}
+
+                  {% else %}
+
+                  {% endif %}
+                  <!-- school -->
+                  {% if spell contains '' %}
+
+                  {% elsif spell_info contains '' %}
+
+                  {% else %}
+
+                  {% endif %}
+                  <!-- attack/save -->
+                  {% if spell contains '' %}
+
+                  {% elsif spell_info contains '' %}
+
+                  {% else %}
+
+                  {% endif %}
+                  <!-- damage/effect -->
+                  {% if spell contains '' %}
+
+                  {% elsif spell_info contains '' %}
+
+                  {% else %}
+
+                  {% endif %}
+                </ul>
+
+                <hr/>
+
+                {{ spell }}
+                {{ spell_info }}
+
+                <!-- include any footnotes -->
+                {% if spell contains 'footnote' %}
+                <hr/>
+                  <small>{{ spell['footnote'] | markdownify }}</small>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
 
         </div> <!-- End card body -->
       </div> <!-- End collapse-able -->

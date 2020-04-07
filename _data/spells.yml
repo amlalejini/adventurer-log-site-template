@@ -1,0 +1,103 @@
+firebolt:
+  level: 0
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+mending:
+  level: 0
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+shield:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+thunderwave:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+scorching ray:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+shatter:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+cure wounds:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+alarm:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+feather fall:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+aid:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+alter self:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+lesser restoration:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo
+
+web:
+  level:
+  casting_time:
+  components:
+  duration:
+  description: |
+    todo

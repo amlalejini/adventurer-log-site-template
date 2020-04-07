@@ -70,6 +70,36 @@ character_info:
   background_features:
     - guild business
     - guild membership
+  prepared_spell_limit: 7 # intelligence modifier + floor(0.5 * level)
+  spell_slots:
+    - level: 1
+      slots: 4
+    - level: 2
+      slots: 2
+  spells:
+    - spell: firebolt
+    - spell: mending
+    - spell: shield
+      prepared: true
+      footnote: Always prepared via class specialization.
+    - spell: thunderwave
+      prepared: true
+      footnote: Always prepared via class specialization.
+    - spell: scorching ray
+      prepared: true
+      footnote: Always prepared via class specialization.
+    - spell: shatter
+      prepared: true
+      footnote: Always prepared via class specialization.
+    - spell: cure wounds
+    - spell: alarm
+    - spell: feather fall
+    - spell: aid
+    - spell: alter self
+    - spell: lesser restoration
+    - spell: web
+    - spell: this doesn't exist
+      range/area: does this work?
   money: 15gp
   inventory:
     weapons:

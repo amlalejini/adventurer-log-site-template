@@ -47,9 +47,11 @@ layout: default
       {% include character_info_features.html %}
     </div>
 
+    {% if page.character_info.spells %}
     <div id="spells">
       {% include character_info_spells.html %}
     </div>
+    {% endif %}
 
     <div id="inventory">
       {% include character_info_inventory.html %}
@@ -63,20 +65,27 @@ layout: default
 
   <div class="col-1 float-right ">
     <ul class="list-group sticky-top">
+
       <li class="list-group-item border-0">
         <span>
           <a href="#stats"><i class="fal fa-analytics"></i></a>
         </span>
       </li>
+
       <li class="list-group-item border-0">
         <a href="#features"><i class="fal fa-sparkles"></i></a>
       </li>
+
+      {% if page.character_info.spells %}
       <li class="list-group-item border-0">
         <a href="#spells"><i class="fad fa-wand-magic"></i></a>
       </li>
+      {% endif %}
+
       <li class="list-group-item border-0">
         <a href="#inventory"><i class="fal fa-backpack"></i> </a>
       </li>
+
       <li class="list-group-item border-0">
         <a href="#journal"><i class="fal fa-book"></i></a>
       </li>
