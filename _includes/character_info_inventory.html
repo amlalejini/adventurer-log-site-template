@@ -14,8 +14,12 @@
       <div id="inventory-card" class="collapse" area-labelledby="inventory-card-heading">
         <div class="card-body">
           <!-- TODO - Money -->
+
           <!-- -->
           <ul class="list-group">
+            <li class="list-group-item">
+              <h5> <i class="fad fa-sack-dollar"></i> {{ page.character_info.money }}</h5>
+            </li>
             {% for category in page.character_info.inventory %}
               <li class="list-group-item bg-dark text-light">
                 <h5>{{ category[0] | capitalize }}</h5>
