@@ -25,7 +25,7 @@
       <ul class="collapse list-unstyled" id="charSubmenu">
         {% for char in site.characters %}
         <li>
-          <a href="{{ site.url }}/characters/{{ char.title }}" class="text-light">{{ char.character_info.name }}</a>
+          <a href="{{ site.baseurl }}/characters/{{ char.title }}" class="text-light">{{ char.character_info.name }}</a>
         </li>
         {% endfor %}
       </ul>
