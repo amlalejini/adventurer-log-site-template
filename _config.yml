@@ -1,6 +1,7 @@
 # Site settings
 title: "Adventurer's Log"
 email: amlalejini@gmail.com
+baseurl: /adventurer-log-site-template
 
 include:
   - _pages
