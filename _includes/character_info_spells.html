@@ -57,6 +57,9 @@
                   {% if spell_level and spell_level == 0 %}
                     <span class="badge badge-success ml-2">Cantrip</span>
                   {% endif %}
+                  {% if spell_info contains 'ritual' and spell_info['ritual'] == true %}
+                    <span class="badge badge-danger">Ritual</span>
+                  {% endif %}
                 </h5>
                 <!-- spell level -->
                 {% if spell_level %}

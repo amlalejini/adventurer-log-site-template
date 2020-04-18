@@ -76,7 +76,7 @@ character_info:
     - level: 1
       slots: 4
     - level: 2
-      slots: 2
+      slots: 3
   spells:
     - spell: firebolt
     - spell: mending
@@ -93,14 +93,19 @@ character_info:
       prepared: true
       footnote: Always prepared via class specialization.
     - spell: cure wounds
+      prepared: true
     - spell: alarm
+      prepared: true
     - spell: feather fall
+      prepared: true
     - spell: aid
+      prepared: true
     - spell: alter self
+      prepared: true
     - spell: lesser restoration
+      prepared: true
     - spell: web
-    - spell: this doesn't exist
-      range/area: does this work?
+      prepared: true
   money: 15gp
   inventory:
     weapons:
