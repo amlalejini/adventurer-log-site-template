@@ -65,6 +65,13 @@ class:
 
         The sigils otherwise last indefinitely. You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain bonus to one of the spell's damage rolls equal to the number rolled. If the spell affects multiple creatures, one creature of your choice takes the bonus damage.
 
+    flash of genius:
+      level: 7
+      description: |
+        Starting at 7th level, you gain the ability to come up with solutions under pressure. When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can use your reaction to add your Intelligence modifier to the roll.
+
+        You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.
+
 racial:
   warforged:
     constructed resilience:

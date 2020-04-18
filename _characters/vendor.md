@@ -7,12 +7,12 @@ character_info:
   class_specialty: artillerist
   race: warforged
   background: guild artisan
-  level: 6
+  level: 7
   age: unknown
   alignment: Neutral good
   proficiency_bonus: 3
   armor_class: 20
-  max_health: 51
+  max_health: 59
   size: medium
   speed: 30 feet
   spellcasting: true
@@ -63,6 +63,7 @@ character_info:
     - the right tool for the job
     - eldritch cannon
     - arcane firearm
+    - flash of genius
   racial_features:
     - constructed resilience
     - sentry's rest
