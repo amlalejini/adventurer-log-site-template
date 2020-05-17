@@ -7,12 +7,12 @@ character_info:
   class_specialty: artillerist
   race: warforged
   background: guild artisan
-  level: 7
+  level: 8
   age: unknown
   alignment: Neutral good
   proficiency_bonus: 3
   armor_class: 20
-  max_health: 59
+  max_health: 67
   size: medium
   speed: 30 feet
   spellcasting: true
@@ -22,7 +22,7 @@ character_info:
     strength: 8
     dexterity: 14
     constitution: 16
-    intelligence: 18
+    intelligence: 20
     wisdom: 12
     charisma: 8
   proficient_skills:
